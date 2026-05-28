@@ -1,13 +1,9 @@
 ---
-
-layout: default
-title: "GitHub Pages와 Jekyll로 개발일지 블로그 만들기"
-date: 2026-05-28 10:40:00 +0900
-categories: jekyll github-pages blog
-
+title: "블로그 만들기 1 - GitHub Pages와 Jekyll"
+date: 2026-05-28 09:40:00 +0900
+categories: [Blog, Github Blog]
+tags: [github-pages, jekyll, troubleshooting]
 ---
-
-# GitHub Pages와 Jekyll로 개발일지 블로그 만들기
 
 ## 시작하게 된 이유
 
@@ -27,7 +23,7 @@ categories: jekyll github-pages blog
 ## 개발 환경
 
 | 항목         | 내용                |
-| ---------- | ----------------- |
+|------------|-------------------|
 | OS         | Windows           |
 | IDE        | IntelliJ IDEA     |
 | 정적 사이트 생성기 | Jekyll            |
@@ -39,19 +35,19 @@ categories: jekyll github-pages blog
 
 GitHub Pages 블로그를 만들기 위해 먼저 Jekyll과 Bundler를 설치했다.
 
-```powershell
+```terminal
 gem install jekyll bundler
 ```
 
 설치가 끝난 뒤 Jekyll이 제대로 설치됐는지 확인했다.
 
-```powershell
+```terminal
 jekyll -v
 ```
 
 정상적으로 아래처럼 버전이 출력됐다.
 
-```text
+```terminal
 jekyll 4.4.1
 ```
 
@@ -64,20 +60,21 @@ jekyll 4.4.1
 
 현재 GitHub Pages용 저장소는 이미 만들어져 있는 상태였다.
 
-```text
+```terminal
 C:\study\mimimid.github.io
 ```
 
 이 폴더 안에서 Jekyll 사이트를 생성하려고 했더니 아래와 같은 오류가 발생했다.
 
-```powershell
+```terminal
 jekyll new ./
 ```
 
-```text
+```terminal
 Conflict: C:/study/mimimid.github.io exists and is not empty.
 Ensure C:/study/mimimid.github.io is empty or else try again with `--force` to proceed and overwrite any files.
 ```
+{: .error-log}
 
 로그를 보니 저장소 폴더가 비어 있지 않다고 한다.
 이미 파일이 있는 폴더라서 Jekyll이 새 사이트 생성을 막은 것이다.
@@ -86,7 +83,7 @@ Jekyll 입장에서는 남의 집에 갑자기 들어가서 가구 배치를 새
 
 현재 저장소에는 중요한 작업 파일이 거의 없고 `README.md` 정도만 있었기 때문에, 이번에는 `--force` 옵션을 사용해서 진행했다.
 
-```powershell
+```terminal
 jekyll new . --force
 ```
 
@@ -102,13 +99,13 @@ jekyll new . --force
 
 Jekyll을 설치한 뒤 로컬 서버를 실행하려고 했다.
 
-```powershell
+```terminal
 bundle exec jekyll serve
 ```
 
 그런데 CMD에서는 정상적으로 실행되는데, IntelliJ 터미널에서는 아래 오류가 발생했다.
 
-```text
+```terminal
 bundle : 'bundle' 용어가 cmdlet, 함수, 스크립트 파일 또는 실행할 수 있는 프로그램 이름으로 인식되지 않습니다.
 ```
 
@@ -121,7 +118,7 @@ bundle : 'bundle' 용어가 cmdlet, 함수, 스크립트 파일 또는 실행할
 
 그랬더니 IntelliJ 터미널에서도 정상적으로 실행됐다.
 
-```powershell
+```terminal
 bundle exec jekyll serve
 ```
 
@@ -144,7 +141,7 @@ theme: jekyll-theme-minimal
 
 테마를 변경한 뒤 아래와 같은 경고가 발생했다.
 
-```text
+```terminal
 Build Warning: Layout 'page' requested in 404.html does not exist.
 Build Warning: Layout 'page' requested in about.markdown does not exist.
 Build Warning: Layout 'home' requested in index.markdown does not exist.
@@ -206,20 +203,20 @@ layout: default
 
 최종적으로 아래 명령어로 Jekyll 로컬 서버를 실행했다.
 
-```powershell
+```terminal
 bundle exec jekyll serve
 ```
 
 정상적으로 실행되면 아래와 같은 로그가 출력된다.
 
-```text
+```terminal
 Server address: http://127.0.0.1:4000/
 Server running... press ctrl-c to stop.
 ```
 
 브라우저에서 아래 주소로 접속하면 로컬 블로그를 확인할 수 있다.
 
-```text
+```terminal
 http://localhost:4000
 ```
 
@@ -236,14 +233,13 @@ http://localhost:4000
 
 아직 디자인도 단순하고 글 목록도 직접 잡아줘야 하지만, 일단 개발일지를 작성할 수 있는 기본 틀은 만들어졌다.
 
-이번 작업을 하면서 Jekyll 블로그가 대략 어떤 구조로 돌아가는지 알게 됐다.
+이번 작업을 하면서 Jekyll 블로그가 대략 어떤 구조로 돌아가는지 알게 됐다.<br>
 특히 `_config.yml`, `_posts`, `assets`, `_site`의 역할을 구분하는 게 중요했다.
 
 정리하자면 오늘의 결론은 이렇다.
 
 * Jekyll은 Markdown 파일을 HTML로 변환해준다.
 * `_site`는 직접 수정하지 않는다.
-* 테마를 바꾸면 layout 경고가 날 수 있다.
 * IntelliJ 터미널이 명령어를 못 찾으면 일단 재시작을 해보자.
 * 개발 블로그 만들기도 생각보다 개발이다.
 

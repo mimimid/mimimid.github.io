@@ -22,10 +22,8 @@ chirpy-temp/
 
 # IDE configurations
 .idea/
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/tasks.json
+.vscode/
+.devcontainer/
 
 # OS files
 .DS_Store
