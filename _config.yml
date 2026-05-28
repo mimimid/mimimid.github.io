@@ -1,0 +1,23 @@
+title: Ming Dev Log
+description: >-
+  Java, Spring Boot, 웹 애플리케이션 개발, 인프라 운영, 문제 해결 과정을 기록하는 개발 블로그입니다.
+baseurl: ""
+url: "https://mimimid.github.io"
+
+# SNS / 계정
+github_username: mimimid
+
+# Build settings
+theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+exclude:
+  - .idea/
+  - .git/
+  - .jekyll-cache/
+  - _site/
+  - Gemfile
+  - Gemfile.lock
