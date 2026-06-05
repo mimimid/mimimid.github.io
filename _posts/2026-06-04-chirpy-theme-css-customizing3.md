@@ -171,15 +171,13 @@ _rouge-theme.scss
 
 ![Carbon 스타일 예시](/assets/images/2026-06-01/carbon_style.png)
 
-저기서 여러 디자인을 선택할 수 있는데, 나는 Solarized Dark 느낌으로 최대한 비슷하게 커스텀해볼 거다.
+Carbon은 코드 이미지를 예쁘게 만드는 별도 서비스이기 때문에, 참고용으로 보도록 할 것이다.<br>
+여러 디자인 보다가 Solarized Dark의 느낌으로 최대한 비슷하게 커스텀해볼 거다.
 
-상단에는 Mac 창 느낌의 점 3개가 있고, 코드 영역은 어두운 배경으로 정리된 다크 테마 느낌이다.
+상단에는 Mac 창 느낌의 점 3개가 있고, 코드 영역은 어두운 배경으로 정리된 다크 테마 느낌이다.<br>
 
-단, Chirpy의 코드블럭 HTML 구조와 Carbon의 구조는 다르다.
-
-Carbon은 코드 이미지를 예쁘게 만드는 별도 서비스이기 때문에, Carbon의 소스 코드를 그대로 가져와서 적용하는 방식은 맞지 않았다.
-
-> Carbon 스타일을 그대로 복사하는 것 X
+목표를 정했다!!
+> Carbon 스타일을 그대로 복사하는 것 X<br>
 > Carbon 느낌을 Chirpy 구조에 맞게 구현하는 것 O
 
 ### Rouge 테마 선택하고 파일 생성하기
@@ -252,9 +250,9 @@ html[data-mode=light] .highlight .nc {
 * `.highlight`: 클래스 선택자
 * `.nc`: 클래스 선택자
 
-처음에는 왜 내 CSS가 적용되지 않는지 이해가 잘 안 됐다.
+또 CSS...
 
-확인해보니 CSS에서는 같은 요소에 여러 스타일이 적용될 경우 **명시도(specificity)**가 더 높은 선택자가 우선 적용된다.
+CSS에서는 같은 요소에 여러 스타일이 적용될 경우 **명시도(specificity)**가 더 높은 선택자가 우선 적용된다.
 
 명시도는 보통 아래처럼 계산한다.
 
@@ -336,7 +334,6 @@ Chirpy 기본 선택자와 명시도가 같아졌다.
 내 경우 `jekyll-theme-chirpy.scss`에서 Chirpy 기본 스타일을 먼저 불러오고, 그 뒤에 `custom/rouge-theme`를 불러오기 때문에 내가 가져온 Rouge 스타일이 정상적으로
 적용됐다.
 
-역시 CSS는 선택자 싸움이었다.
 
 ### Rouge Token 색상 보정하기
 
@@ -525,11 +522,9 @@ $error-muted: #fca5a5;
 
 마크다운에서는 아래처럼 작성했다.
 
-````markdown
 ```terminal
 Copy-Item "$chirpyPath\assets\css\jekyll-theme-chirpy.scss" "assets\css\jekyll-theme-chirpy.scss" -Force
 ```
-````
 
 그런데 실제 화면에서는 문자열 안의 특정 부분만 다른 색으로 보였다.
 
@@ -633,7 +628,11 @@ Copy-Item "$chirpyPath\assets\css\jekyll-theme-chirpy.scss" "assets\css\jekyll-t
 
 이렇게 하니 명령어, 일반 코드, 에러 로그가 각각 다르게 보였다.
 
-코드블럭을 화려하게 꾸미는 것보다, 각 코드블럭의 목적에 맞게 구분하는 게 더 중요하다고 느꼈다.
+>커스텀 전 코드블록
+![basic-code-css](/assets/images/2026-06-01/basic_codeCss.png)
+
+>커스텀 후 코드블록
+![basic-code-css](/assets/images/2026-06-01/custom_codeCss.png)
 
 ## 정리
 

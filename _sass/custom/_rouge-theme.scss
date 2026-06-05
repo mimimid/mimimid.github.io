@@ -12,7 +12,7 @@ html .content .highlight .c, html .content .highlight .ch, html .content .highli
   color: #657b83;
 }
 html .content .highlight .nl {
-  color: inherit;
+  color: #e8e8e8;
 }
 html .content .highlight .cp {
   color: #b58900;
@@ -22,6 +22,11 @@ html .content .highlight .nt {
 }
 html .content .highlight .o, html .content .highlight .ow {
   color: #93a1a1;
+}
+.content .language-scss .highlight .token-important,
+.content .language-css .highlight .token-important {
+  color: #ff5370 !important;
+  font-weight: 600;
 }
 html .content .highlight .p, html .content .highlight .pi {
   color: #929192;
