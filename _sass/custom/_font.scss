@@ -1,0 +1,26 @@
+/* Pretendard Variable: 여러 굵기 지원 */
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("/assets/fonts/Pretendard/PretendardVariable.woff2") format("woff2");
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* D2Coding Regular */
+@font-face {
+  font-family: "D2Coding";
+  src: url("/assets/fonts/D2Coding/D2Coding.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* D2Coding Bold - 파일이 있을 때만 사용 */
+@font-face {
+  font-family: "D2Coding";
+  src: url("/assets/fonts/D2Coding/D2CodingBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
